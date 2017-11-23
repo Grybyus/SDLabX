@@ -21,11 +21,9 @@ def list_users(request):
 def search(request):
     query = request.GET.get('q')
     if query:
-        print "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah"
         r = requests.get('http://127.0.0.1:8080/SDapp/customers/' + query+"/")
         json = r.json()
         print json
-        print "xxxxxxxxxxxxx"
     else:
         json = [] 
     return json
